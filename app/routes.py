@@ -8,7 +8,8 @@ def index():
     return "Hello, World!"
 
 @app.route('/esp32/info', methods=['GET','POST'])
-def esp32_info(arceau_id):
+def esp32_info():
+    arceau_id=1
     data = request.get_json() #récupère les données de l'ESP32 : batterie et état
     newState = data["state"]
     newBattery = data["battery"]
