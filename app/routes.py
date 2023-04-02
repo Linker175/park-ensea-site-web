@@ -45,3 +45,6 @@ def update_arceau_state(arceau_id):
 def get_state(arceau_id):
     arceau = Arceau.query.get(arceau_id)
     return jsonify(state=arceau.state, battery=arceau.battery)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
