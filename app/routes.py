@@ -7,7 +7,7 @@ from app.models import Arceau
 def index():
     return "Hello, World!"
 
-@app.route('/esp32/<int:arceau_id>/info', methods=['GET','POST'])
+@app.route('/esp32/info', methods=['GET','POST'])
 def esp32_info(arceau_id):
     data = request.get_json() #récupère les données de l'ESP32 : batterie et état
     newState = data["state"]
