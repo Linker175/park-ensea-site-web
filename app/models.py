@@ -10,3 +10,5 @@ class Arceau(db.Model):
 
     def __repr__(self):
         return '<Arceau {}>'.format(self.id)
+    
+    

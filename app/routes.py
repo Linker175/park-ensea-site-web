@@ -47,3 +47,5 @@ def get_state(arceau_id):
     return jsonify(state=arceau.state, battery=arceau.battery)
 
 
+
+
