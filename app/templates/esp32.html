@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tableau avec bouton dynamique</title>
+	<script>
+		var arceauState = {{ arceauState|tojson }};
+		var arceauStateNew;
+		var arceau_id = 1;
+		var arceauAction;
+		var arceauBattery;
+		
+		/*** UPDATE THE BUTTON STATE ***/
+		function buttonUpdate() {
+			var button = document.getElementById('arceauButton');
+			if (arceauState == 0) {
+				button.innerHTML = "En attente";
+				button.disabled = true;
+			}
+			else if (arceauState == 1) {
+				button.innerHTML = "Descendre l'arceau";
+				button.disabled = false;
+			}
+			else if (arceauState == 2) {
+				button.innerHTML = "Lever l'arceau";
+				button.disabled = false;
+			}
+			buttonsUpdate();
+		}
+
+		/*** REACT ON THE CLICK OF THE BUTTON ***/
+		function buttonClick() {
+			var arceauButton = document.getElementById("arceauButton");
+			if (arceauButton.disabled) {
+				button.innerHTML = "En attente";
+				button.disabled = true;
+			} 
+			else if(arceauButton.innerHTML == "Descendre l'arceau"){
+				arceauState=0;
+				arceauAction=2;
+			}
+			else if(arceauButton.innerHTML == "Lever l'arceau") {
+				arceauState=0;
+				arceauAction=1;
+			}
+			buttonUpdate();
+			buttonsUpdate();
+			sendDataToDB(arceauAction);
+			setTimeout(function() {
+				arceauAction=0;
+  				sendDataToDB(arceauAction);
+				buttonsUpdate();
+			}, 1000);
+		}
+
+		/*** SEND DATA TO UPDATE_DB ***/
+		function sendDataToDB(arceauActiontoDB){
+			fetch('/update_state/' + arceau_id, {
+				method: 'POST',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify({action: arceauActiontoDB.toString()})
+			})
+
+		/*** print response from update_db ***/ 
+		.then(response => response.json())
+		.then(data => {
+				console.log(data.message);
+		})
+		.catch(error => {
+				console.error(error);
+		});
+		}
+
+		/*** FONCTIONS TEST POUR REINITIALISER State ***/
+		/**
+		
+		function buttonClick2() {
+			arceauState=2;
+			buttonUpdate();
+		}
+	
+		function buttonClick3() {
+			arceauState=1;
+			buttonUpdate();
+		}
+
+		**/
+
+
+		function buttonsUpdate(){
+			document.getElementById("divstate").innerHTML = "État de l'arceau : "+arceauState;
+			document.getElementById("divaction").innerHTML = "Action pour l'arceau :  "+arceauAction;
+			document.getElementById("test").innerHTML = arceauBattery;
+		}
+	
+		/*** Viens chercher l'état de state selon l'ESP32 ***/
+		function updateState(){
+			fetch('/get_state/' + arceau_id, { // remplace 1 par l'id de l'arceau dont tu veux récupérer l'état
+				method: 'POST',
+				headers: {
+				'Content-Type': 'application/json'
+				}
+  			})
+			.then(response => response.json())
+			.then(data => {
+				arceauState = data.state;
+				arceauBattery = data.battery;
+				buttonUpdate();
+				buttonsUpdate();
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+		}
+		setInterval(updateState, 5000); // Modifie l'état toutes les 5 secondes
+	</script>
+    
+</head>
+<body onload="buttonUpdate()">
+	<table>
+		<tr>
+			<td>Colonne 1</td>
+			<td>Colonne 2</td>
+			<td id="test"> Batterie</td>
+			<td><button id="arceauButton" onclick="buttonClick()">-</button></td>
+		</tr>
+	</table>
+
+<p id="validation-msg"></p>
+<div id="divstate"></div>
+<div id="divaction"></div>
+
+<!--  
+<button id="set2" onclick="buttonClick2()">2</button>
+<button id="set1" onclick="buttonClick3()">1</button>
+-->
+</body>
+</html>
+
+
+
