@@ -18,16 +18,6 @@ def esp32_info(arceau_id):
     action = arceau.action
     return str(action)
 
-@app.route('/esp32/<int:arceau_id>/info2', methods=['GET'])
-def esp32_info2(arceau_id):
-    arceau = Arceau.query.get(arceau_id)
-    action = 1
-    return "salut"
-
-@app.route('/esp32/info2', methods=['GET'])
-def esp32_info23():
-    return "salut"
-
 @app.route('/esp32')
 def esp32():
     arceau_id=1
