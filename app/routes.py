@@ -15,7 +15,7 @@ def esp32_info(arceau_id):
     arceau = Arceau.query.get(arceau_id)
     arceau.state = newState
     arceau.battery = newBattery
-    return arceau.action
+    return jsonify(action=arceau.action)
 
 @app.route('/esp32')
 def esp32():
