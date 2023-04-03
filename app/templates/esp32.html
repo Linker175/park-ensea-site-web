@@ -44,8 +44,6 @@
 			}
 			buttonUpdate();
 			sendDataToDB(arceauAction);
-
-			document.getElementById("aaah").innerHTML = "AVANT";
 			lock=1;
 			buttonsUpdate();
 			setTimeout(function() {
@@ -53,8 +51,6 @@
   				sendDataToDB(arceauAction);
 				lock=0;
 				buttonUpdate();
-				document.getElementById("aaah").innerHTML = "APRES";
-				//setInterval(updateState(lock), 1000); 
 			}, 5000);
 		}
 
@@ -121,13 +117,13 @@
 	</script>
     
 </head>
-<body onload="buttonUpdate(),updateState()">
+<body onload="buttonUpdate();updateState();">
 	<table>
 		<tr>
 			<td>Arceau 1 - </td>
 			<td></td>
 			<td id="test"> Batterie</td>
-			<td><button id="arceauButton" onclick="buttonClick()">-</button></td>
+			<td><button id="arceauButton" onclick="buttonClick();">-</button></td>
 		</tr>
 	</table>
 
