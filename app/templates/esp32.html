@@ -98,8 +98,8 @@
 		}
 	
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
-		function updateState(lock){
-			if (lock==0){
+		function updateState(){
+			if(lock==0){
 				document.getElementById("aaah").innerHTML = "JEXECUTE";
 				fetch('/get_state/' + arceau_id, { 
 					method: 'POST',
@@ -115,10 +115,10 @@
 				})
 				.catch(error => {
 					console.error('Error:', error);
-				});
+			});
 			}
 		}
-		setInterval(updateState(lock), 1000); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState(), 1000); // Modifie l'état toutes les 5 secondes
 	</script>
     
 </head>
