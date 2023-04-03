@@ -43,7 +43,6 @@
 				arceauAction=1;
 			}
 			buttonUpdate();
-			buttonsUpdate();
 			sendDataToDB(arceauAction);
 
 			document.getElementById("aaah").innerHTML = "AVANT";
@@ -53,7 +52,8 @@
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				lock=0;
-				buttonsUpdate();
+				buttonUpdate();
+				document.getElementById("aaah").innerHTML = "APRES";
 			}, 5000);
 		}
 
@@ -100,6 +100,7 @@
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
 		function updateState(lock){
 			if (lock==0){
+				document.getElementById("aaah").innerHTML = "JEXECUTE";
 				fetch('/get_state/' + arceau_id, { 
 					method: 'POST',
 					headers: {
@@ -111,7 +112,6 @@
 					arceauState = data.state;
 					arceauBattery = data.battery;
 					buttonUpdate();
-					buttonsUpdate();
 				})
 				.catch(error => {
 					console.error('Error:', error);
