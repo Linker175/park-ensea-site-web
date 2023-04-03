@@ -54,6 +54,7 @@
 				lock=0;
 				buttonUpdate();
 				document.getElementById("aaah").innerHTML = "APRES";
+				setInterval(updateState(lock), 1000); 
 			}, 5000);
 		}
 
@@ -115,10 +116,10 @@
 				})
 				.catch(error => {
 					console.error('Error:', error);
-			});
+				});
 			}
 		}
-		setInterval(updateState(), 1000); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState, 1000); // Modifie l'état toutes les 5 secondes
 	</script>
     
 </head>
