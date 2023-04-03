@@ -47,14 +47,13 @@
 			sendDataToDB(arceauAction);
 
 			document.getElementById("aaah").innerHTML = "AVANT";
+			lock=1;
 			setTimeout(function() {
-				lock=1;
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
-				document.getElementById("aaah").innerHTML = "BPDT";
+				lock=0;
 			}, 5000);
-			document.getElementById("aaah").innerHTML = "CAPRES";
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
