@@ -46,16 +46,15 @@
 			buttonsUpdate();
 			sendDataToDB(arceauAction);
 
+			document.getElementById("aaah").innerHTML = "AVANT";
 			setTimeout(function() {
 				lock=1;
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
+				document.getElementById("aaah").innerHTML = "BPDT";
 			}, 5000);
-			setTimeout(function() {
-				lock=0;
-				buttonsUpdate();
-			}, 100);
+			document.getElementById("aaah").innerHTML = "CAPRES";
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
@@ -136,6 +135,7 @@
 <div id="divstate"></div>
 <div id="divaction"></div>
 <div id="divlock"></div>
+<div id="aaah"></div>
 
 
 <!--  
