@@ -15,6 +15,7 @@ def esp32_info(arceau_id):
     arceau = Arceau.query.get(arceau_id)
     arceau.state = newState
     arceau.battery = newBattery
+    db.session.commit()
     return "OK"
 
 @app.route('/esp32/<int:arceau_id>/action', methods=['GET',])
