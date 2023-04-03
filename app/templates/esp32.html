@@ -55,7 +55,7 @@
 				buttonUpdate();
 				document.getElementById("aaah").innerHTML = "APRES";
 				//setInterval(updateState(lock), 1000); 
-			}, 5000);
+			}, 10000);
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
@@ -119,7 +119,7 @@
 				});
 			}
 		}
-		setInterval(updateState, 1000); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState, 100); // Modifie l'état toutes les 5 secondes
 	</script>
     
 </head>
