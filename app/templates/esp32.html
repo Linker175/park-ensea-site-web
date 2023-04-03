@@ -48,11 +48,12 @@
 
 			document.getElementById("aaah").innerHTML = "AVANT";
 			lock=1;
+			buttonsUpdate();
 			setTimeout(function() {
 				arceauAction=0;
   				sendDataToDB(arceauAction);
-				buttonsUpdate();
 				lock=0;
+				buttonsUpdate();
 			}, 5000);
 		}
 
