@@ -8,7 +8,7 @@
 		var arceau_id = 1;
 		var arceauAction;
 		var arceauBattery;
-		
+		var lock;
 		/*** UPDATE THE BUTTON STATE ***/
 		function buttonUpdate() {
 			var button = document.getElementById('arceauButton');
@@ -46,10 +46,12 @@
 			buttonsUpdate();
 			sendDataToDB(arceauAction);
 			setTimeout(function() {
+				lock=1;
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
 			}, 5000);
+			lock=0;
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
@@ -93,22 +95,24 @@
 	
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
 		function updateState(){
-			fetch('/get_state/' + arceau_id, { // remplace 1 par l'id de l'arceau dont tu veux récupérer l'état
-				method: 'POST',
-				headers: {
-				'Content-Type': 'application/json'
-				}
-  			})
-			.then(response => response.json())
-			.then(data => {
-				arceauState = data.state;
-				arceauBattery = data.battery;
-				buttonUpdate();
-				buttonsUpdate();
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
+			if (lock==0){
+				fetch('/get_state/' + arceau_id, { // remplace 1 par l'id de l'arceau dont tu veux récupérer l'état
+					method: 'POST',
+					headers: {
+					'Content-Type': 'application/json'
+					}
+				})
+				.then(response => response.json())
+				.then(data => {
+					arceauState = data.state;
+					arceauBattery = data.battery;
+					buttonUpdate();
+					buttonsUpdate();
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			}
 		}
 		setInterval(updateState, 1000); // Modifie l'état toutes les 5 secondes
 	</script>
