@@ -52,8 +52,10 @@
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
 			}, 5000);
-			lock=0;
-			buttonsUpdate();
+			setTimeout(function() {
+				lock=0;
+				buttonsUpdate();
+			}, 100);
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
