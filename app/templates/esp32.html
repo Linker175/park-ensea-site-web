@@ -96,7 +96,7 @@
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
 		function updateState(lock){
 			if (lock==0){
-				fetch('/get_state/' + arceau_id, { // remplace 1 par l'id de l'arceau dont tu veux récupérer l'état
+				fetch('/get_state/' + arceau_id, { 
 					method: 'POST',
 					headers: {
 					'Content-Type': 'application/json'
