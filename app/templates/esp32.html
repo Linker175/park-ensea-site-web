@@ -45,14 +45,15 @@
 			buttonUpdate();
 			buttonsUpdate();
 			sendDataToDB(arceauAction);
-			lock=1;
+
 			setTimeout(function() {
+				lock=1;
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
-				lock=0;
 			}, 5000);
-			
+			lock=0;
+			buttonsUpdate();
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
@@ -92,6 +93,7 @@
 			document.getElementById("divstate").innerHTML = "État de l'arceau : "+arceauState;
 			document.getElementById("divaction").innerHTML = "Action pour l'arceau :  "+arceauAction;
 			document.getElementById("test").innerHTML = arceauBattery;
+			document.getElementById("divlock").innerHTML = "Etat du lock :  "+lock;
 		}
 	
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
@@ -129,9 +131,10 @@
 		</tr>
 	</table>
 
-<p id="validation-msg"></p>
 <div id="divstate"></div>
 <div id="divaction"></div>
+<div id="divlock"></div>
+
 
 <!--  
 <button id="set2" onclick="buttonClick2()">2</button>
