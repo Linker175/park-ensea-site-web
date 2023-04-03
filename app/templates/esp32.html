@@ -3,11 +3,11 @@
 <head>
 	<title>Tableau avec bouton dynamique</title>
 	<script>
-		var arceauState = {{ arceauState|tojson }};
+		var arceauState = {{arceauState|tojson }};
 		var arceauStateNew;
 		var arceau_id = 1;
 		var arceauAction = 0;
-		var arceauBattery = {{ arceauBattery|tojson}};
+		var arceauBattery = {{arceauBattery|tojson}};
 		var lock = 0;
 		/*** UPDATE THE BUTTON STATE ***/
 		function buttonUpdate() {
@@ -24,6 +24,7 @@
 				button.innerHTML = "Lever l'arceau";
 				button.disabled = false;
 			}
+		  buttonsUpdate();
 		}
 
 		
@@ -120,7 +121,7 @@
 	</script>
     
 </head>
-<body onload="buttonUpdate;buttonsUpdate;">
+<body onload="buttonUpdate();">
 	<table>
 		<tr>
 			<td>Arceau 1 - </td>
