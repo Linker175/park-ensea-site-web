@@ -54,7 +54,6 @@
 			buttonsUpdate();
 			sendDataToDB(arceauAction);
 			lock=1;
-			buttonsUpdate();
 			setTimeout(function() {
 				arceauAction=0;
   				sendDataToDB(arceauAction);
@@ -117,7 +116,7 @@
 				});
 			}
 		}
-		setInterval(updateState, 100); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState, 300); // Modifie l'état toutes les 5 secondes
 	</script>
     
 </head>
