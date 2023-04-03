@@ -6,9 +6,9 @@
 		var arceauState = {{ arceauState|tojson }};
 		var arceauStateNew;
 		var arceau_id = 1;
-		var arceauAction;
-		var arceauBattery;
-		var lock;
+		var arceauAction = 0;
+		var arceauBattery = {{ arceauBattery|tojson}}
+		var lock = 0;
 		/*** UPDATE THE BUTTON STATE ***/
 		function buttonUpdate() {
 			var button = document.getElementById('arceauButton');
@@ -120,7 +120,7 @@
 	</script>
     
 </head>
-<body onload="updateState();buttonUpdate();">
+<body onload="buttonUpdate;buttonsUpdate;">
 	<table>
 		<tr>
 			<td>Arceau 1 - </td>

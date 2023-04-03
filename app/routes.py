@@ -29,7 +29,8 @@ def esp32():
     arceau_id=1
     arceau = Arceau.query.get(arceau_id)
     arceauState = arceau.state
-    return render_template('esp32.html', arceauState=arceauState)
+    arceauBattery = arceau.battery
+    return render_template('esp32.html', arceauState=arceauState, arceauBattery=arceauBattery)
 
 @app.route("/update_state/<int:arceau_id>", methods=["POST"])
 def update_arceau_state(arceau_id):
