@@ -94,14 +94,12 @@
 		function buttonsUpdate(){
 			document.getElementById("divstate").innerHTML = "État de l'arceau : "+arceauState;
 			document.getElementById("divaction").innerHTML = "Action pour l'arceau :  "+arceauAction;
-			document.getElementById("test").innerHTML = arceauBattery;
-			document.getElementById("divlock").innerHTML = "Etat du lock :  "+lock;
+			document.getElementById("test").innerHTML = "Batterie ="+arceauBattery+"%";
 		}
 	
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
 		function updateState(){
 			if(lock==0){
-				document.getElementById("aaah").innerHTML = "JEXECUTE";
 				fetch('/get_state/' + arceau_id, { 
 					method: 'POST',
 					headers: {
@@ -126,8 +124,8 @@
 <body onload="buttonUpdate()">
 	<table>
 		<tr>
-			<td>Colonne 1</td>
-			<td>Colonne 2</td>
+			<td>Arceau 1 - </td>
+			<td></td>
 			<td id="test"> Batterie</td>
 			<td><button id="arceauButton" onclick="buttonClick()">-</button></td>
 		</tr>
