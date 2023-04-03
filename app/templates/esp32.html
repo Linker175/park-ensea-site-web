@@ -45,8 +45,8 @@
 			buttonUpdate();
 			buttonsUpdate();
 			sendDataToDB(arceauAction);
+			lock=1;
 			setTimeout(function() {
-				lock=1;
 				arceauAction=0;
   				sendDataToDB(arceauAction);
 				buttonsUpdate();
