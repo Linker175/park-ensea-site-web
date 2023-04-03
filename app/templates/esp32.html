@@ -94,7 +94,7 @@
 		}
 	
 		/*** Viens chercher l'état de state selon l'ESP32 ***/
-		function updateState(){
+		function updateState(lock){
 			if (lock==0){
 				fetch('/get_state/' + arceau_id, { // remplace 1 par l'id de l'arceau dont tu veux récupérer l'état
 					method: 'POST',
@@ -114,7 +114,7 @@
 				});
 			}
 		}
-		setInterval(updateState, 1000); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState(lock), 1000); // Modifie l'état toutes les 5 secondes
 	</script>
     
 </head>
