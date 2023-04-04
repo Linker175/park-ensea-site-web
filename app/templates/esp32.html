@@ -9,6 +9,7 @@
 		var arceauAction = 0;
 		var arceauBattery = {{arceauBattery|tojson}};
 		var lock = 0;
+		var timer = 6000;
 		/*** UPDATE THE BUTTON STATE ***/
 		function buttonUpdate() {
 			var button = document.getElementById('arceauButton');
@@ -45,10 +46,12 @@
 			else if(arceauButton.innerHTML == "Descendre l'arceau"){
 				arceauState=0;
 				arceauAction=2;
+				timer=6000
 			}
 			else if(arceauButton.innerHTML == "Lever l'arceau") {
 				arceauState=0;
 				arceauAction=1;
+				timer=13000
 			}
 			buttonUpdate();
 			buttonsUpdate();
@@ -60,7 +63,7 @@
 				lock=0;
 				buttonUpdate();
 				buttonsUpdate();
-			}, 5000);
+			}, timer);
 		}
 
 		/*** SEND DATA TO UPDATE_DB ***/
