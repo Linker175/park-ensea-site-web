@@ -46,7 +46,7 @@
 			else if(arceauButton.innerHTML == "Descendre l'arceau"){
 				arceauState=0;
 				arceauAction=2;
-				timer=8000;
+				timer=7500;
 			}
 			else if(arceauButton.innerHTML == "Lever l'arceau") {
 				arceauState=0;
@@ -113,13 +113,14 @@
 					arceauState = data.state;
 					arceauBattery = data.battery;
 					buttonUpdate();
+					buttonUpdates();
 				})
 				.catch(error => {
 					console.error('Error:', error);
 				});
 			}
 		}
-		setInterval(updateState, 10); // Modifie l'état toutes les 5 secondes
+		setInterval(updateState, 1); // Modifie l'état toutes les 10ms secondes
 	</script>
     
 </head>
