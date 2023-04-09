@@ -1,0 +1,202 @@
+body{
+/* User-side */
+position: relative;
+width: 100%;
+height: 1800px;
+padding: 0;
+margin: 0;
+/* background */
+background: linear-gradient(180deg, #212056 0%, #0D0AA2 100%);
+}
+
+button {
+    /* dimensions */
+    width: 116px;
+    height: 48px;
+    /* bordure */
+    border: 1.5px solid #ED5E5E;
+    border-radius: 70px;
+    /* arrière-plan */
+    background: rgba(237, 94, 94, 0.45);
+    /* Alignement vertical et horizontal du texte*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* curseur */
+    cursor: pointer;
+}
+
+#arceauButton {
+    /* dimensions */
+    position: relative;
+    width: 116px;
+    height: 48px;
+    left : 35%;
+    /* bordure */
+    border: 1.5px solid #FFFFFF;
+    border-radius: 70px;
+    /* arrière-plan */
+    background: rgba(255, 255, 255, 0.45);
+    /* Alignement vertical et horizontal du texte*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* curseur */
+    cursor: pointer;
+}
+
+
+.button-text{
+    color: #ED5E5E;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400; /* épaisseur */
+    font-size: 14px; 
+    line-height: 18px;
+    /* centrer horizontalement */
+    text-align: center;
+}
+
+.username{
+    /* position du block */
+    margin-right: 15px;
+
+    /* disposition intérieure */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    /* couleur de police */
+    color: #FFFFFF;
+
+    /* curseur */
+    cursor: pointer;
+}
+
+h4{
+    margin-bottom: 4px;
+    margin-top: 4px;    
+}
+
+h5{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.right-buttons{
+    /* position */
+    position : absolute;
+    top: 1%;
+    right: 2%;
+
+    /* disposition intérieure */
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+
+h1{
+    position: absolute;
+    width : 50%;
+    height: 2%;
+    left : 25%;
+    top : 10%;
+    text-align: center;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 100px;
+    line-height: 100px;
+    color: #FFFFFF;
+}
+
+h2{
+    position: absolute;
+    width : 30%;
+    height: 2%;
+    left : 35%;
+    top : 20%;
+    text-align: center;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 50px;
+    color: #FFFFFF;
+}
+
+h4{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+h5{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+#section-arceau{
+    margin-top: 10%;
+    width: 85%;
+    position: absolute;
+    top : 35%;  
+    color: #FFFFFF;
+    left : 7.5%;
+    text-align: center;
+}
+
+.arceau{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+
+.arceau-text{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+#section-arceau-tableau{
+    margin-top: 2%;
+    width: 100%;
+    height: 800px;
+    background: rgba(6, 101, 255,0.1);
+    border-radius: 15px;
+    text-align: center;
+}
+
+#table{
+    position: relative;
+    color: #ffffff;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    width: 80%;
+    left: 10%;
+    align-items: center;
+    line-height: 18px;
+    opacity: 1;
+}
+
+#titre{
+    margin-bottom: 200px;
+}

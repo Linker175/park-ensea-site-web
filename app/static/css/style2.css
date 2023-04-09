@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #171236;
+    overflow: hidden;
+}
+
+.accueil {
+    height: 55vh;
+    max-width: 100%;
+    margin-top: -15%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenu{
+    margin-top:300px;
+}
+
+.bottom-arrow{
+    text-align: center;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 2px;
+    transform: rotate(90deg);
+    color: #FFFFFF;
+}
+
+
+.fond-curvy {
+    width : 100%;
+    position: absolute;
+    left: 0;
+    top: -80%;
+    display: block;
+    z-index: -1;
+    user-select: none; 
+}
+
+.fond-back {
+    width : 100%;
+    position: absolute;
+    left: 0;
+    top: -60%;
+    display: block;
+    z-index: -3;
+    user-select: none; 
+}
+
+.fond-front {
+    width : 65%;
+    position: absolute;
+    left:0;
+    top: -15%;
+    display: block;
+    z-index: 0;
+    user-select: none; 
+}
+
+button {
+    /* position */
+    position : absolute;
+    top: 2%;
+    right: 1%;
+    /* dimensions */
+    width: 116px;
+    height: 48px;
+    /* bordure */
+    border: 1.5px solid #FFFFFF;
+    border-radius: 70px;
+    /* arrière-plan */
+    background: rgba(255, 255, 255, 0.15);
+    /* Alignement vertical et horizontal du texte*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* curseur */
+    cursor: pointer;
+}
+
+.button-text{
+    color: #FFFFFF;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400; /* épaisseur */
+    font-size: 14px; 
+    line-height: 18px;
+    /* centrer horizontalement */
+    text-align: center;
+}
+
+#h1 {
+    text-align: center;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 100px;
+    line-height: 100px;
+    color: #FFFFFF;
+}
+
+.div-button{
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: 1340px;
+    top: 614px;
+}
+
+.go-up-button{
+    /* emplacement */
+    position: absolute;
+    right: calc(1%);
+    bottom: calc(2%);
+
+    /* bordure et physique*/
+    width: 56px;
+    height: 56px;
+    background: #0665FF;;
+    opacity: 0.1; 
+    border-radius: 16px;
+    z-index: -1;
+
+    /* bordure */
+
+
+    /* texte */
+}
+
+.go-up-button-text{    
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 37px;        
+    color : #0665FF;
+    opacity: 1;
+    z-index: 1;
+}
+
+.login-block{
+    /* position */
+    position: absolute;
+    top: 30%;
+    left:30%;
+    width: 40%;
+    height: 50%;
+    z-index: -2;
+
+    /* bordure et background */
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+
+    /* organisation intérieure */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.button-submit{
+        /* position */
+        position : absolute;
+        left : 43%;
+        bottom: 2%;
+
+        /* dimensions */
+        width: 116px;
+        height: 48px;
+        /* bordure */
+        border: 1.5px solid #000000;
+        border-radius: 70px;
+        /* arrière-plan */
+        background: rgba(0, 0, 0, 0.10);
+        /* Alignement vertical et horizontal du texte*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* curseur */
+        cursor: pointer;
+
+        /* couleur du texte */
+        color: #000000;    
+        text-align: center;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 15px;
+
+}
+
+
+.forgotten-password{
+    text-align: right;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #555555;
+    text-align: right;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+
+}
+
+.remember-me{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.input{
+    background: #F4F4F4;
+    border: 1.5px solid #F4F4F4;
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+}
+
+.label-input{
+    color: #000000;
+    text-align: left;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 650;
+    font-size: 15px;
+    line-height: 17px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+

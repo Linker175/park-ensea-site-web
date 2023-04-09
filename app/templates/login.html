@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Park-Ensea Login</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
+  <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
+<body>
+    <div class="accueil">
+        <div class="contenu">
+            <button type="button" onclick=" redirectionAccueil()">
+                <div class="button-text">Accueil</div>
+            </button>
+            </div>
+            <h1 id="h1">PARK-ENSEA</h1>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="login-block" id="login-block">
+                <form class="login-form" action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+                    {{ form.email.label(class="label-input") }}
+                    {{ form.email(size=64, class_='input') }}
+                    {% for error in form.email.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %} 
+                    {{ form.password.label(class='label-input') }}
+                    {{ form.password(size=32, class="input") }}
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                    <p class="forgotten-password">Mot de passe oublié ?</p>
+                    <p class="remember-me">{{ form.remember_me(class='button-remember-me')}} {{ form.remember_me.label }}</p>
+                    {{ form.submit(class="button-submit") }}
+                </form> 
+            </div>
+        </div>
+        <img src="{{ url_for('static', filename='svg/fond.svg') }}"  class="fond-curvy" id="fond-curvy">
+        <img src="{{ url_for('static', filename='svg/fond_back.svg') }}" class="fond-back" id="fond-back">
+        <img src="{{ url_for('static', filename='svg/fond_front.svg') }}" class="fond-front" id="fond-front">
+    </div>
+</body>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Park-Ensea</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
+</head>
+<body>
+    <div id="accueil">
+        <div class="contenu">
+            <button type="button" onclick="redirectionLogin()">
+                <div class="button-text">Se connecter</div>
+            </button>
+            <h1 id="h1">PARK-ENSEA</h1>
+            <div class="go-down-button" id="go-down-button">
+                <h3>Découvrir</h3>
+                <div class="bottom-arrow">></div>
+            </div>
+        <div class="login-block" id="login-block"> </div>
+        <img src="{{ url_for('static', filename='svg/fond.svg') }}"  class="fond-curvy" id="fond-curvy">
+        <img src="{{ url_for('static', filename='svg/fond_back.svg') }}" class="fond-back" id="fond-back">
+        <img src="{{ url_for('static', filename='svg/fond_front.svg') }}" class="fond-front" id="fond-front">
+    </div>
+    <div class="div-button">
+        <div class="go-up-button">
+            <div class="go-up-button-text">↑</div>
+        </div>
+    </div>
+</body>
