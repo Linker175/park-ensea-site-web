@@ -15,15 +15,6 @@
             <h1 id="h1">PARK-ENSEA</h1>
         </div>
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
 
         <div class="login-block" id="login-block">
                 <form class="login-form" action="" method="post" novalidate>
@@ -41,6 +32,17 @@
                     <p class="forgotten-password">Mot de passe oublié ?</p>
                     <p class="remember-me">{{ form.remember_me(class='button-remember-me')}} {{ form.remember_me.label }}</p>
                     {{ form.submit(class="button-submit") }}
+
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                        <li class="ecritenrouge">{{ message}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+
                 </form> 
             </div>
         </div>

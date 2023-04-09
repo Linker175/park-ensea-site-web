@@ -242,6 +242,9 @@ button {
     margin-bottom: 0px;
 }
 
+.ecritenrouge{
+    color:red;
+}
 
 @media screen and (max-width: 1000px){
     .fond-curvy {
