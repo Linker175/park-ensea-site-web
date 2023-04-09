@@ -35,68 +35,30 @@ body {
 
 
 @media screen and (max-width: 1000px){
-    .accueil {
-        top: 0;
-        height: 35vh;
-        margin-top: -22px;
-    }
-
     .fond-curvy {
         width : 100%;
-        position: absolute;
-        top : 20%;
         left: 0;
-        display: block;
-        z-index: -1;
+        top: 40%;
     }
-
     .fond-back {
         width : 100%;
-        position: absolute;
         left: 0;
-        top: 25%;
-        display: block;
-        z-index: -2;
-    }
-    
-    .contenu{
-        margin-top:500px;
+        top: 45%;
     }
 
-    h1 {
-        text-align: center;
-        font-family: 'Arial';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 60px;
-        line-height: 40px;
-        color: #FFFFFF;
-    }
-    
-    h3 {
-        margin-top:300px;
-        text-align: center;
-        font-family: 'Arial';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 40px;
-        line-height: 20px;
-        color: #FFFFFF;
-    }
-    
-    .bottom-arrow{
-        text-align: center;
-        font-family: 'Helvetica';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        line-height: 2px;
-        transform: rotate(90deg);
-        color: #FFFFFF;
+    #button{
+        position: absolute;
+        width: 20%;
+        height : 5%;
+        background: rgba(255, 255, 255, 0.35);
     }
 
+    #button-text{
+        font-weight: 400; /* épaisseur */
+        font-size: 25px; 
+        line-height: 29px;
+    }
 }
-
 .fond-curvy {
     width : 100%;
     position: absolute;

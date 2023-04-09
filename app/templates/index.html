@@ -9,8 +9,8 @@
 <body>
     <div id="accueil">
         <div class="contenu">
-            <button type="button" onclick="redirectionLogin()">
-                <div class="button-text">Se connecter</div>
+            <button id="button" type="button" onclick="redirectionLogin()">
+                <div id="button-text" class="button-text">Se connecter</div>
             </button>
             <h1 id="h1">PARK-ENSEA</h1>
             <div class="go-down-button" id="go-down-button">
@@ -22,9 +22,9 @@
         <img src="{{ url_for('static', filename='svg/fond_back.svg') }}" class="fond-back" id="fond-back">
         <img src="{{ url_for('static', filename='svg/fond_front.svg') }}" class="fond-front" id="fond-front">
     </div>
-    <div class="div-button">
+    <!--<div class="div-button">
         <div class="go-up-button">
             <div class="go-up-button-text">↑</div>
         </div>
-    </div>
+    </div> -->
 </body>

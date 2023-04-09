@@ -1,4 +1,5 @@
 function redirectionLogin(){
+  if(!window.matchMedia('(max-width: 1000px)').matches){
   document.getElementById("fond-curvy").animate([
       // étapes/keyframes
       { transform: 'translateY(0px)' },
@@ -62,15 +63,14 @@ function redirectionLogin(){
     duration: 500,
     fill: 'forwards'
   });
-
+  }
   setTimeout(function(){
     window.location.href = '/login';
   }, 500);
-
-
   };
   
   function redirectionAccueil(){
+    if(!window.matchMedia('(max-width: 1000px)').matches){
     document.getElementById("fond-curvy").animate([
         // étapes/keyframes
         { transform: 'translateY(0px)' },
@@ -130,7 +130,7 @@ function redirectionLogin(){
       duration: 500,
       fill: 'forwards'
     });
-  
+    }
     setTimeout(function(){
       window.location.href = '/index';
     }, 500);
