@@ -5,7 +5,20 @@ var timer = 0;
 
 /*** Generate HTML code to print the table (in function of the number of arceau) ***/
 function update_tab(){
+    var tableHTML = "<table id='table'><tr id='titre'><th>Arceau ID</th><th>Battery</th><th>Action</th><th>État</th><th>Lever/Descendre</th></tr>";
+    for (var i = 0; i < arceauState.length; i++) {
+    tableHTML += "<tr>";
+    tableHTML += "<td >" + arceauId[i] + "</td>";
+    tableHTML += "<td id='arceauBattery'>" + arceauBattery[i] + "</td>";
+    tableHTML += "<td id='arceauAction'>" + 0 + "</td>";
+    tableHTML += "<td id='arceauState'>" + arceauState[i] + "</td>";
+    tableHTML += "<td>" + "<button id='arceauButton' onclick='buttonClick();'>-</button>" + "</td>";
+    tableHTML += "</tr>";
+    }
 
+    tableHTML += "</table>";
+
+    document.getElementById("section-arceau-tableau").innerHTML = tableHTML;
 }
 
 /*** update text of the button and call table text update ***/
