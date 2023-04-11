@@ -13,7 +13,7 @@
                 <div id="button-text" class="button-text">Se connecter</div>
             </button>
             <h1 id="h1">PARK-ENSEA</h1>
-            <div class="go-down-button" id="go-down-button">
+            <div class="go-down-button" id="go-down-button" onclick="scrollDownOnClick()">
                 <h3>Découvrir</h3>
                 <div class="bottom-arrow">></div>
             </div>
@@ -24,9 +24,12 @@
         <img src="{{ url_for('static', filename='svg/fond_back.svg') }}" class="fond-back" id="fond-back">
         <img src="{{ url_for('static', filename='svg/fond_front.svg') }}" class="fond-front" id="fond-front">
     </div>
-    <!--<div class="div-button">
-        <div class="go-up-button">
-            <div class="go-up-button-text">↑</div>
-        </div>
-    </div> -->
+    <div id="go-up-button" onclick="scrollUpOnClick()" >
+        <div id="go-up-button-text">↑</div>
+    </div>
+    <div class="label-usertest">
+        Amusez-vous avez le compte utilisateur suivant : 
+        <h2 id="mail">user@ensea.fr</h2><br>
+        <h2 id="pass">ensea</h2>
+    </div>
 </body>

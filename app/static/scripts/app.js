@@ -134,3 +134,18 @@ function animateToAccueil(){
   });
 };
 
+function scrollDownOnClick() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+}
+
+document.getElementById(go-up-button).style.position = 'fixed';
+
+function scrollUpOnClick() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
