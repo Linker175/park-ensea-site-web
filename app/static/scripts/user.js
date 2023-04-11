@@ -1,6 +1,5 @@
-var arceauState = {{arceauState}};
-var arceauBattery = {{arceauBattery}};
-var arceauId = {{arceauId}};
+var arceauState;
+var arceauAction;
 var arceau_id = 1;
 var arceauAction = 0;
 var lock = 0;
