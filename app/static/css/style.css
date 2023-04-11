@@ -3,9 +3,9 @@ body {
     max-width: 100%;
     padding: 0;
     margin: 0;
-    background: #171236;
-    overflow: hidden;
-}
+    height: 1800px;
+    background: #171236;   
+    overflow: overlay;}
 
 #accueil {
     height: 55vh;
@@ -33,32 +33,6 @@ body {
     color: #FFFFFF;
 }
 
-
-@media screen and (max-width: 1000px){
-    .fond-curvy {
-        width : 100%;
-        left: 0;
-        top: 40%;
-    }
-    .fond-back {
-        width : 100%;
-        left: 0;
-        top: 45%;
-    }
-
-    #button{
-        position: absolute;
-        width: 20%;
-        height : 5%;
-        background: rgba(255, 255, 255, 0.35);
-    }
-
-    #button-text{
-        font-weight: 400; /* épaisseur */
-        font-size: 25px; 
-        line-height: 29px;
-    }
-}
 .fond-curvy {
     width : 100%;
     position: absolute;
@@ -205,5 +179,31 @@ h3 {
     opacity: 0;
     box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
+}
+
+@media screen and (max-width: 1000px){
+    .fond-curvy {
+        width : 100%;
+        left: 0;
+        top: 40%;
+    }
+    .fond-back {
+        width : 100%;
+        left: 0;
+        top: 45%; 
+    }
+
+    #button{
+        position: absolute;
+        width: 20%;
+        height : 5%;
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    #button-text{
+        font-weight: 400; /* épaisseur */
+        font-size: 25px; 
+        line-height: 29px;
+    }
 }
 
