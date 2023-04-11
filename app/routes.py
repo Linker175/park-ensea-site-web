@@ -24,7 +24,7 @@ def esp32_info(arceau_id):
     arceau.state = data["state"]        #Update on DB state of the arceau 
     arceau.battery = data["battery"]    #Update on DB battery of the arceau 
     db.session.commit()                 
-    return
+    return "ok"
 
 #Write on a page command for the arceau (data read by ESP32)
 @app.route('/esp32/<int:arceau_id>/action', methods=['GET'])
@@ -39,7 +39,7 @@ def update_arceau_state(arceau_id):
     data = request.get_json()           #Get data from webpage
     arceau.action = data["action"]      #Update on DB action for the arceau
     db.session.commit()
-    return 
+    return "ok"
 
 #Write on a page state of the arceau for the website (data read by webpage) 
 @app.route("/get_state/<int:arceau_id>", methods=["POST"])
