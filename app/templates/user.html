@@ -4,12 +4,27 @@
   <meta charset="utf-8">
   <title>Park-Ensea User</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_user.css') }}">
-  <script script src="{{ url_for('static', filename='scripts/user.js') }}">  
+  <script>  
         /*** we get here data from flask code ***/
         var arceauState = {{arceauState}};
         var arceauBattery = {{arceauBattery}};
         var arceauId = {{arceauId}};
+        var tableHTML = "<table id='table'><tr id='titre'><th>Arceau ID</th><th>Battery</th><th>Action</th><th>État</th><th>Lever/Descendre</th></tr>";
+        for (var i = 0; i < arceauState.length; i++) {
+        tableHTML += "<tr>";
+        tableHTML += "<td >" + arceauId[i] + "</td>";
+        tableHTML += "<td id='arceauBattery'>" + arceauBattery[i] + "</td>";
+        tableHTML += "<td id='arceauAction'>" + 0 + "</td>";
+        tableHTML += "<td id='arceauState'>" + arceauState[i] + "</td>";
+        tableHTML += "<td>" + "<button id='arceauButton' onclick='buttonClick();'>-</button>" + "</td>";
+        tableHTML += "</tr>";
+        }
+
+        tableHTML += "</table>";
+
+        document.getElementById("section-arceau-tableau").innerHTML = tableHTML;
   </script>
+  <script src="{{ url_for('static', filename='scripts/user.js') }}"></script>
 </head>
 
 <body onload="update_tab();">
