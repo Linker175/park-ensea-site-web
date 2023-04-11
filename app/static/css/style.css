@@ -75,7 +75,7 @@ button {
     border: 1.5px solid #FFFFFF;
     border-radius: 70px;
     /* arrière-plan */
-    background: #rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15);
     /* Alignement vertical et horizontal du texte*/
     display: flex;
     justify-content: center;
