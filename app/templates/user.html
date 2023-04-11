@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <title>Park-Ensea User</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_user.css') }}">
-  <script>  
+  <script script src="{{ url_for('static', filename='scripts/user.js') }}">  
         /*** we get here data from flask code ***/
         var arceauState = {{arceauState}};
         var arceauBattery = {{arceauBattery}};
         var arceauId = {{arceauId}};
   </script>
-  <script src="{{ url_for('static', filename='scripts/user.js') }}"></script>
 </head>
 
 <body onload="update_tab();">
