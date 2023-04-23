@@ -17,19 +17,19 @@ def index():
     return render_template('index.html')
 
 #Get information on the actual state of the arceau (data sent by ESP32)
-@app.route('/esp32/<int:arceau_id>/info', methods=['GET','POST'])
+@app.route('/esp32/<int:arceau_id>/info', methods=['POST'])
 def esp32_info(arceau_id):
-    data = request.get_json() #récupère les données de l'ESP32 : batterie et état
+    data = request.get_json() #get data from ESP32 : battery and state
     newState = data["state"]
     newBattery = data["battery"]
-    arceau = Arceau.query.get(arceau_id)    #Get data from ESP32
+    arceau = Arceau.query.get(arceau_id)    #go get the db
     arceau.state = newState     #Update on DB state of the arceau 
     arceau.battery = newBattery #Update on DB battery of the arceau 
     db.session.commit()
-    return "OK"
+    return "ok"
 
 #Write on a page command for the arceau (data read by ESP32)
-@app.route('/esp32/<int:arceau_id>/action', methods=['GET'])
+@app.route('/esp32/<int:arceau_id>/action')
 def esp32_action(arceau_id):
     arceau = Arceau.query.get(arceau_id)
     return str(arceau.action)   #Data sent under a string form
@@ -43,14 +43,7 @@ def update_arceau_state(arceau_id):
     arceau.action = newAction
     db.session.commit()
     # Renvoyer une réponse HTTP vide avec un code 200 OK
-    if newAction=="0":
-        return "z"
-    elif newAction=="1":
-        return "u"
-    elif newAction=="2":
-        return "d"
-    else:
-        return "e"
+    return "ok"
 
 #Write on a page state of the arceau for the website (data read by webpage) 
 @app.route("/get_state/<int:arceau_id>", methods=["POST"])

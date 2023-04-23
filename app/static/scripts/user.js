@@ -108,8 +108,7 @@ function updateState(){
         .catch(error => {
             console.error('Error:', error);
         });
-    }
-
+    }   
 }
 
 setInterval(updateState, 1000); //launch a process that update arceauState every seconds
